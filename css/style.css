@@ -1,0 +1,126 @@
+* {
+    user-select: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #f47e2f;
+    color: white;
+}
+
+#timer {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.difficulties {
+    display: table-row;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(10, 30px);
+    grid-template-rows: repeat(10, 30px);
+    gap: 2px;
+    margin: 20px 0;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    background-color: #228b22;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid #000000;
+}
+
+.cell.revealed {
+    background-color: white;
+    cursor: default;
+}
+
+.cell.mine {
+    background-color: #fd103f;
+    background-image: url('../img/bomb.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.cell.revealed-mine {
+    background-color: #faec28;
+    background-image: url('../img/bomb.png');
+    background-size: cover;
+    background-position: center;
+    cursor: default;
+}
+
+.cell.flag {
+    background-image: url('../img/flag.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.cell.correct-flag {
+    background-image: url('../img/flag.png');
+    background-size: cover;
+    background-position: center;
+    background-color: #27fb6b;
+}
+
+.cell.wrong-flag {
+    background-color: #2dc5f7;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.number-1 {
+    color: blue;
+}
+
+.number-2 {
+    color: green;
+}
+
+.number-3 {
+    color: red;
+}
+
+.number-4 {
+    color: navy;
+}
+
+.number-5 {
+    color: brown;
+}
+
+.number-6 {
+    color: turquoise;
+}
+
+.number-7 {
+    color: black;
+}
+
+.number-8 {
+    color: gray;
+}
