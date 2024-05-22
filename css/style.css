@@ -9,16 +9,27 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f47e2f;
     color: white;
+    padding: 10px;
+    margin: 0;
+}
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
 }
 
 #timer {
-    font-size: 20px;
+    font-size: 1.25rem;
     margin: 10px 0;
 }
 
 .difficulties {
-    display: table-row;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    text-align: center;
+    gap: 10px;
+    margin-bottom: 15px;
     font-family: Arial, sans-serif;
 }
 
@@ -61,16 +72,13 @@ body {
     cursor: default;
 }
 
-.cell.flag {
+.cell.flag, .cell.correct-flag {
     background-image: url('../img/flag.png');
     background-size: cover;
     background-position: center;
 }
 
 .cell.correct-flag {
-    background-image: url('../img/flag.png');
-    background-size: cover;
-    background-position: center;
     background-color: #27fb6b;
 }
 
@@ -80,7 +88,7 @@ body {
 
 button {
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 1rem;
     background-color: #007bff;
     color: white;
     border: none;
@@ -93,34 +101,68 @@ button:hover {
     background-color: #0056b3;
 }
 
-.number-1 {
-    color: blue;
+.number-1 { color: blue; }
+.number-2 { color: green; }
+.number-3 { color: red; }
+.number-4 { color: navy; }
+.number-5 { color: brown; }
+.number-6 { color: turquoise; }
+.number-7 { color: black; }
+.number-8 { color: gray; }
+
+/* Media Queries per la responsività */
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    #timer {
+        font-size: 1rem;
+    }
+    
+    .difficulties {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    button {
+        padding: 8px 16px;
+        font-size: 0.875rem;
+    }
+    
+    #game-board {
+        grid-template-columns: repeat(10, 8vw);
+        grid-template-rows: repeat(10, 8vw);
+    }
+    
+    .cell {
+        width: 8vw;
+        height: 8vw;
+    }
 }
 
-.number-2 {
-    color: green;
-}
-
-.number-3 {
-    color: red;
-}
-
-.number-4 {
-    color: navy;
-}
-
-.number-5 {
-    color: brown;
-}
-
-.number-6 {
-    color: turquoise;
-}
-
-.number-7 {
-    color: black;
-}
-
-.number-8 {
-    color: gray;
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.25rem;
+    }
+    
+    #timer {
+        font-size: 0.875rem;
+    }
+    
+    button {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+    
+    #game-board {
+        grid-template-columns: repeat(10, 9vw);
+        grid-template-rows: repeat(10, 9vw);
+    }
+    
+    .cell {
+        width: 9vw;
+        height: 9vw;
+    }
 }
