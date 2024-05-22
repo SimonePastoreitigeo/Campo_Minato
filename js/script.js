@@ -94,6 +94,7 @@ function handleCellClick(x, y) {
     cell.classList.add('revealed');
     if (board[x][y].mine) {
         cell.classList.add('mine');
+        clearInterval(timer);
         revealAllMines(x, y);
         highlightCorrectFlags();
         removeWrongFlags();
@@ -130,7 +131,6 @@ function handleCellRightClick(e, x, y) {
     }
 
     updateCounters();
-    checkWin();
 }
 
 // Rivela tutte le mine tranne quella cliccata
