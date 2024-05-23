@@ -23,7 +23,7 @@ let timeRemaining = 60;
 
 // Aggiorna la visualizzazione dei conteggi
 function updateCounters() {
-    gameStats.textContent = `Mine rimaste: ${mineCount - flagsPlaced}, Campi rimasti: ${remainingCells}`;
+    gameStats.innerHTML = `Mine rimaste: ${mineCount - flagsPlaced}<br>Campi rimasti: ${remainingCells}`;
 }
 
 // Crea la griglia di gioco
@@ -234,7 +234,7 @@ function checkWin() {
         revealAllFlags();
         revealAllCells();
         clearInterval(timer);
-        gameStats.textContent = "Hai vinto! Hai impiegato " + ((difficolta == "Facile" ? 60 : difficolta == "Medio" ? 120 : 180) - timeRemaining) + " secondi.";
+        gameStats.innerHTML = "Hai vinto!<br>Hai impiegato " + ((difficolta == "Facile" ? 60 : difficolta == "Medio" ? 120 : 180) - timeRemaining) + " secondi.";
         gameOver = true;
         playing = false;
     }

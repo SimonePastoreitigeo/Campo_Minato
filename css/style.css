@@ -41,6 +41,10 @@ h1 {
     margin: 20px 0;
 }
 
+#game-stats {
+    text-align: center;
+}
+
 .cell {
     width: 30px;
     height: 30px;
