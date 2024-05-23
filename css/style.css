@@ -1,18 +1,11 @@
 * {
     user-select: none;
-    box-sizing: border-box;
-}
-
-html, body {
-    height: 100%;
-    margin: 0;
 }
 
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     font-family: Arial, sans-serif;
     background-color: #f47e2f;
     color: white;
@@ -42,26 +35,15 @@ h1 {
 
 #game-board {
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(10, 30px);
+    grid-template-rows: repeat(10, 30px);
     gap: 2px;
-    width: 100%;
-    max-width: 90vw;
-    max-height: 90vw;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    justify-items: center;
-}
-
-#game-board div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 20px 0;
 }
 
 .cell {
-    width: 100%;
-    aspect-ratio: 1;
+    width: 30px;
+    height: 30px;
     background-color: #228b22;
     display: flex;
     align-items: center;
@@ -80,7 +62,6 @@ h1 {
     background-image: url('../img/bomb.png');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
 }
 
 .cell.revealed-mine {
@@ -88,7 +69,6 @@ h1 {
     background-image: url('../img/bomb.png');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     cursor: default;
 }
 
@@ -96,7 +76,6 @@ h1 {
     background-image: url('../img/flag.png');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
 }
 
 .cell.correct-flag {
@@ -131,6 +110,8 @@ button:hover {
 .number-7 { color: black; }
 .number-8 { color: gray; }
 
+/* Media Queries per la responsività */
+
 @media (max-width: 600px) {
     h1 {
         font-size: 1.5rem;
@@ -151,15 +132,13 @@ button:hover {
     }
     
     #game-board {
-        grid-template-columns: repeat(auto-fill, minmax(8vw, 1fr));
-        grid-template-rows: repeat(auto-fill, minmax(8vw, 1fr));
+        grid-template-columns: repeat(10, 8vw);
+        grid-template-rows: repeat(10, 8vw);
     }
-
+    
     .cell {
-        width: 100%;
-        height: 100%;
-        max-width: 30px;
-        max-height: 30px;
+        width: 8vw;
+        height: 8vw;
     }
 }
 
@@ -178,14 +157,12 @@ button:hover {
     }
     
     #game-board {
-        grid-template-columns: repeat(auto-fill, minmax(9vw, 1fr));
-        grid-template-rows: repeat(auto-fill, minmax(9vw, 1fr));
+        grid-template-columns: repeat(10, 9vw);
+        grid-template-rows: repeat(10, 9vw);
     }
-
+    
     .cell {
-        width: 100%;
-        height: 100%;
-        max-width: 25px;
-        max-height: 25px;
+        width: 9vw;
+        height: 9vw;
     }
 }
