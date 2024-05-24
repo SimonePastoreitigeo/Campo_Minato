@@ -6,19 +6,22 @@
     <title>Campo Minato</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" href="./img/fiore.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
     <h1>Campo Minato</h1>
     <div class="difficulties">
         <div id="difficulty">Difficoltà: Facile</div>
-        <button id="btnFacile">Facile</button>
-        <button id="btnMedio">Medio</button>
-        <button id="btnDifficile">Difficile</button>
+        <button type="button" class="btn btn-primary" id="btnFacile">Facile</button>
+        <button type="button" class="btn btn-primary" id="btnMedio">Medio</button>
+        <button type="button" class="btn btn-primary" id="btnDifficile">Difficile</button>
     </div>
     <div id="timer">Tempo rimasto: <span id="time-remaining">60</span> secondi</div>
-    <div id="game-board"></div>
+    <div class="container d-flex justify-content-center">
+        <div id="game-board"></div>
+    </div>
     <h2 id="game-stats"></h2>
-    <button id="reset-button">Reset</button>
+    <button type="button" class="btn btn-danger" id="reset-button">Reset</button>
     <script src="./js/script.js"></script>
 </body>
 </html>

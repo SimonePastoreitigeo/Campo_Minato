@@ -7,8 +7,8 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: Arial, sans-serif;
-    background-color: #f47e2f;
-    color: white;
+    background-color: #f47e2f !important;
+    color: white !important;
     padding: 10px;
     margin: 0;
 }
@@ -34,6 +34,7 @@ h1 {
 }
 
 #game-board {
+    overflow: auto;
     display: grid;
     grid-template-columns: repeat(10, 30px);
     grid-template-rows: repeat(10, 30px);
@@ -88,21 +89,6 @@ h1 {
 
 .cell.wrong-flag {
     background-color: #2dc5f7;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #0056b3;
 }
 
 .number-1 { color: blue; }
